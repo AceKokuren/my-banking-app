@@ -5,7 +5,7 @@ CREATE TABLE transaction
     transaction_date     DATE,
     transaction_vendor   VARCHAR(255),
     transaction_type     VARCHAR(255),
-    transaction_amount   DECIMAL,
+    transaction_amount DECIMAL(20, 2),
     transaction_category VARCHAR(255),
     primary key (transaction_id)
 );
