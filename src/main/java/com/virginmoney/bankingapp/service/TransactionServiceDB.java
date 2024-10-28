@@ -21,7 +21,22 @@ public class TransactionServiceDB implements TransactionService {
     }
 
     @Override
-    public List<Transaction> listTransactionsForCategory(String category) {
-        return List.of();
+    public List<Transaction> getTransactionsByCategory(String category) {
+        return repo.findTransactionsByTransactionCategoryIgnoreCaseOrderByTransactionDateDesc(category);
+    }
+
+    @Override
+    public List<Object[]> getTransactionsTotalPerCategory() {
+        return repo.getTransactionsByCategoryTotals();
+    }
+
+    @Override
+    public List<Number> getTransactionsByCategoryMonthlyAvg(String category) {
+        return repo.getMonthlySpendByCategory(category);
+    }
+
+    @Override
+    public List<Number> getAnnualSpendForCategoryInYear(String category, String year) {
+        return repo.getAnnualSpendByCategory(category, year);
     }
 }
