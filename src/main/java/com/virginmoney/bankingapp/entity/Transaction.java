@@ -23,7 +23,7 @@ public class Transaction {
     private LocalDate transactionDate;
     private String transactionVendor;
     private String transactionType;
-    @Column(columnDefinition = "decimal", precision = 10, scale = 2)
+    @Column(precision = 20, scale = 2)
     private BigDecimal transactionAmount;
     private String transactionCategory;
 
